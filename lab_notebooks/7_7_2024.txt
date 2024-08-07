@@ -1,0 +1,15 @@
+Done:
+
+1. Finished tests for kdtree
+2. Wrote docstrings for kdtree
+3. In the future, in any file, the function called by flat_norm will have a docstring, helper functions will have
+short descriptors of what they do (see kdtree.py for example)
+4. Made test_voronoi with tests for uniform and nonuniform grids, checking average values
+5. write docstrings for voronoi.py
+6. wrote tests for regular and irregular grouping of vectors, fixed major bug that was grouping things under multiple
+representatives
+
+Todo:
+test reduced angles in test_sys_reducer
+
+write own graph and preflow push in numba?

@@ -1,0 +1,12 @@
+Done:
+
+1. wrote docstrings for graph_solver.py
+2. wrote docstrings for weights_system.py
+3. test flat_norm
+4. test ordering of weights with points and graph with points
+
+
+Todo:
+
+if there is still a bug, test reconstruct_system
+

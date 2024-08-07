@@ -1,0 +1,22 @@
+Done:
+
+1. The boundary points in the voronoi calculation seem to be causing our issues, both related to disks disappearing at the correct lambda
+and numerical "glitches" causing random chunks to be taken out
+2. What happens is that the boundary points aren't getting the same area as interior points on the regular grid,
+the algorithm seems very sensitive to this, and while adding padding to the boundary box fixes it if we add 
+precisely the right amount, even trying to infer what this padding should be from the points (0.02 vs 0.2016...) is enough to
+cause numerical errors and mess up lambda/disk disappearance, if we keep using vornoi we probably need to fix this
+and figure out what to do for the irregular case which seems intractable
+3. right now we propose that we don't use the voronoi because it fixes the regular grid, should find a test
+for irregular grid and compare error with and without voronoi
+4. made tests for disappearing disks with lambda, seems more exact with voronoi + padding
+5. tested irregular grid with regular circle and see how lambda is affected, results in numerical_experiments folder
+6. make test_rectangle in test_flat_norm, it cuts off edges as expected with voronoi
+7. corrected voronoi padding calculation to be based on only 4 nearest neighbors
+
+Todo:
+could revive image code and try it on images, do it on the star
+---------------------------------------------------------------------------------------------------------
+come up with an irregular grid test to compare voronoi with and without
+idea for checking voronoi vs not voronoi: increase lambda until you get the original set back, then back off lambda a little
+and measure error 

@@ -1,0 +1,17 @@
+Done:
+
+1. can't really rewrite preflow push in numba because it requires a bunch of heuristics unless we want to comitt
+to a big project
+2. test reduced angles in test_sys_reducer
+3. reducer is correct, maybe investigate order of things once they have weights?
+4. tested weight system for equality with paper, one value off in 4th decimal place (rounding error?)
+5. tested weight system for equality and size (if still broken test more thoroughly)
+6. added compile_graph function to graph_solver, sums weights across same edges and returns weighted edge list
+
+Todo:
+
+docstrings for weight system
+docstrings for graph solver
+
+order test for weight system
+order test for graph solver (compile graph)

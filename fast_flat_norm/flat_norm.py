@@ -49,11 +49,15 @@ points_y = np.linspace(-2,2,1000)
 
 #filename = "2d_lookup_tablenew_integrator50000.txt"
 
-filename = "2d_lookup_tablenew_integratorhalf50000.txt"
+#filename = "2d_lookup_tablenew_integratorhalf50000.txt"
+
+filename = "2d_lookup_tablenew_integratorhalf5000000.txt"
 
 file = np.loadtxt(filename,delimiter=',')
 
 angles,values = file[:,0],file[:,1]
+
+rng = np.random.default_rng(2025)
 
 @jit(nopython=True)
 def bs(angles,theta):
@@ -167,13 +171,13 @@ def reconstruct_system(vectors,keys,groups,weights_reduced):
             n+=1
             weights[values] = weights[key]*np.linalg.norm(vectors[key])/n
             weights[key]*=1/n
-            s = weights[key]*np.linalg.norm(vectors[key])
+            # s = weights[key]*np.linalg.norm(vectors[key])
             for value in values:
                 weights[value] *= 1/np.linalg.norm(vectors[value])
-                s+= np.linalg.norm(vectors[value])*weights[value]
-            print("WEIGHT VS SUM")
-            print(old_weight*np.linalg.norm(vectors[key]))
-            print(s)
+                # s+= np.linalg.norm(vectors[value])*weights[value]
+            # print("WEIGHT VS SUM")
+            # print(old_weight*np.linalg.norm(vectors[key]))
+            # print(s)
     return weights
 
 def make_sys(edges,lengths):
@@ -209,13 +213,16 @@ def get_weights(edges,lengths):
     for i in range(n):
         weights = fast_lst_sqs(A[i],b[i])
         weight_list.append(reconstruct_system(edges[i],key_list[i],group_list[i],weights))
-    print(weight_list[0])
     return weight_list
 
 def get_sample(x_range,y_range,N):
-    sample_points_x = np.random.uniform(*x_range,N)
-    sample_points_y = np.random.uniform(*y_range,N)
-    return np.column_stack((sample_points_x,sample_points_y))
+    m = int(np.sqrt(N))
+    sample_points_x = np.linspace(*x_range,m)
+    sample_points_y = np.linspace(*y_range,m)
+    #sample_points_x = rng.uniform(*x_range,N)
+    #sample_points_y = rng.uniform(*y_range,N)
+    #return np.column_stack((sample_points_x,sample_points_y))
+    return np.dstack(np.meshgrid(sample_points_x,sample_points_y)).reshape(-1,2)
 
 def get_bounding_box(points):
     x_min,x_max = np.min(points[:,0]),np.max(points[:,0])
@@ -229,6 +236,7 @@ def voronoi_areas(points,Tree,N=1000000):
     x_range, y_range, total_area = get_bounding_box(points)
     sample_points = get_sample(x_range, y_range, N)
     nearest_neighbors = Tree.query(sample_points,workers=workers)[1]
+    print(nearest_neighbors)
     indices = np.zeros(len(points))
     unique,counts = np.unique(nearest_neighbors,return_counts=True)
     indices[unique] = counts
@@ -253,16 +261,16 @@ def calculate_edge_vectors(points,graph):
     #print("vertex:", vertices[len(edges)//2+2])
     return edges,lengths,vertices
 
-def add_source_sink(G,E,lamb):
+def add_source_sink(G,E,lamb,areas):
     source = "source"
     sink = "sink"
     G.add_node(source)
     G.add_node(sink)
     for i,point in enumerate(E):
         if point:
-            G.add_edge(source,i,weight=lamb)
+            G.add_edge(source,i,weight=lamb*areas[i])
         else:
-            G.add_edge(sink,i,weight=lamb)
+            G.add_edge(sink,i,weight=lamb*areas[i])
 
 @timing
 def get_min_cut(G):
@@ -277,18 +285,25 @@ def flat_norm(points,E,lamb=1.0,perim_only=False,neighbors = 24):
     Tree,graph,weight_indices = calculate_tree_graph(points,neighbors)
     edges,lengths,vertices = calculate_edge_vectors(points,graph)
     areas = voronoi_areas(points,Tree)
+    #sorted_areas = np.sort(areas)
+    #vals,idx,occ = np.unique(sorted_areas,return_index=True,return_counts=True)
+    #vals = np.round(vals,4)
+    
     weights = get_weights(edges, lengths)
-    scaled_weights = np.multiply(weights,areas[:,np.newaxis]).flatten()
+    areas = 0.0016*np.ones(np.shape(areas))
+    #scaled_weights = np.multiply(weights,areas[:,np.newaxis]).flatten()
+    scaled_weights = (weights*areas[:,np.newaxis]).flatten()
+
     weightst1 = perf_counter()
     perimt0 = perf_counter()
+    
     row = weight_indices[:, 0]
-    col = weight_indices[:, 1]
-    # this has the same effect as the adding entries for csr format
-    weights = np.append(scaled_weights,scaled_weights)
-    rows = np.append(row,col)
-    cols = np.append(col,row)
-    sparse = csr_array((weights, (rows, cols)), shape=(n, n))
+    col = weight_indices[:, 1] 
+    graph_weights = scaled_weights
+    sparse = csr_array((graph_weights, (row, col)), shape=(n, n))
+    #sparse = sparse + sparse.T
     G = nx.from_scipy_sparse_array(sparse)
+    
     perim = get_perimeter(E,G)
     perimt1 = perf_counter()
 
@@ -296,7 +311,7 @@ def flat_norm(points,E,lamb=1.0,perim_only=False,neighbors = 24):
         return None,None,None,perim
 
     mft0 = perf_counter()
-    add_source_sink(G,E,lamb)
+    add_source_sink(G,E,lamb,areas)
     cut_value, partition = get_min_cut(G)
     keep,_ = partition
     mft1 = perf_counter()
@@ -345,7 +360,7 @@ if __name__ == "__main__":
     points_x = np.arange(-5, 5, 1, dtype=np.float64)
     points_y = np.arange(-5, 5, 1, dtype=np.float64)
     points = np.dstack(np.meshgrid(points_x,points_y)).reshape(-1,2)
-    plt.scatter(points[:,0],points[:,1])
+    #plt.scatter(points[:,0],points[:,1])
     #u_lengths = np.linalg.norm(u,axis=1)
     flat_norm(points,np.ones(len(points)),lamb=1.0,neighbors=8)
     #result = get_weights(u,u_lengths)
