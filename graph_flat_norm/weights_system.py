@@ -1,12 +1,13 @@
 import numpy as np
 from numba import jit, float64, types
 import math
+import os
 
 from graph_flat_norm.sys_reducer import group_vectors
 
 filename = "2d_lookup_table.npz"
-
-file = np.load(filename)["angle_integral_values"]
+data_path = os.path.join(os.path.dirname(__file__), filename)
+file = np.load(data_path)["angle_integral_values"]
 
 angles,values = file[:,0],file[:,1]
 
