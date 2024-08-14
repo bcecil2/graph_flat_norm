@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.9)  6 AUG 2024 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.9)  13 AUG 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -137,6 +137,36 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 \c@definition=\count276
 \c@remark=\count277
 
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval
+.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cs.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.s
+ty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gr
+aphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pd
+ftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
 (C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
 kend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
@@ -145,28 +175,54 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 ) (monograph.aux)
 \openout1 = `monograph.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
+p-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count279
+\scratchdimen=\dimen152
+\scratchbox=\box54
+\nofMPsegments=\count280
+\nofMParguments=\count281
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count282
+\MPscratchDim=\dimen153
+\MPnumerator=\count283
+\makeMPintoPDFobject=\count284
+\everyMPtoPDFconversion=\toks30
+)
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
+stopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstop
+df-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
 
 (C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.f
 d
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
 
 
 (C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.f
@@ -175,34 +231,43 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/Curtis Senpai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 120
+LaTeX Font Info:    Trying to load font information for U+eus on input line 125
 .
 
 (C:\Users\Curtis Senpai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueus.f
 d
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-) [3]
-Overfull \hbox (18.18535pt too wide) in paragraph at lines 168--169
-\OT1/cmr/bx/n/10 Theorem 2.2 \OT1/cmr/m/n/10 (Ego-roff)\OT1/cmr/bx/n/10 . \OT1/
+) [3] [4] [5]
+Overfull \hbox (10.00304pt too wide) in paragraph at lines 246--247
+\OT1/cmr/bx/n/10 Definition 2.11. \OT1/cmr/m/it/10 A $\OML/cmm/m/it/10 ^^V$\OT1
+/cmr/m/it/10 -integrable func-tion is called $\OML/cmm/m/it/10 ^^V$\OT1/cmr/m/i
+t/10 -summable if $\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cm
+r/m/n/10 ) \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@1\OML/cmm/m/
+it/10 ; \OMS/cmsy/m/n/10 1\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 . 
+ []
+
+
+Overfull \hbox (18.18535pt too wide) in paragraph at lines 280--281
+\OT1/cmr/bx/n/10 Theorem 2.3 \OT1/cmr/m/n/10 (Ego-roff)\OT1/cmr/bx/n/10 . \OT1/
 cmr/m/it/10 Let $\OML/cmm/m/it/10 ^^V$ \OT1/cmr/m/it/10 be an outer mea-sure on
  $\OML/cmm/m/it/10 X$ \OT1/cmr/m/it/10 and let $\OML/cmm/m/it/10 A$ \OT1/cmr/m/
 it/10 be $\OML/cmm/m/it/10 ^^V\OMS/cmsy/m/n/10 ^^@$\OT1/cmr/m/it/10 measurable
  []
 
-[4] [5] [6] [7] [8] [9] (monograph.aux)
+[6] [7] [8] [9] [10] [11] (monograph.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1881 strings out of 474435
- 27777 string characters out of 5738122
- 1936190 words of memory out of 5000000
- 24233 multiletter control sequences out of 15000+600000
+ 2716 strings out of 474435
+ 40845 string characters out of 5738122
+ 1937190 words of memory out of 5000000
+ 25035 multiletter control sequences out of 15000+600000
  568542 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,12n,65p,1007b,269s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,12n,65p,1007b,291s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Curtis Senpai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><C:/Users/Curtis Senpai/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Curtis Senpai/AppData/Local/Progr
@@ -227,9 +292,9 @@ lic/amsfonts/cm/cmsy7.pfb><C:/Users/Curtis Senpai/AppData/Local/Programs/MiKTeX
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eusm10.pfb><C:/Users/Curtis
  Senpai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on monograph.pdf (9 pages, 266360 bytes).
+Output written on monograph.pdf (11 pages, 280163 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

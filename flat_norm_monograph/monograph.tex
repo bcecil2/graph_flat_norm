@@ -9,6 +9,11 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{remark}{Remark}[section]
+\usepackage{graphicx}
+
+\newcommand{\restrict}{%
+  \,\raisebox{-.127ex}{\reflectbox{\rotatebox[origin=br]{-90}{$\lnot$}}}\,%
+}
 
 %opening
 \title{Flat Norm Monograph}
@@ -156,28 +161,6 @@ Hence given any collection of subsets for a given space, we can form a $\sigma$-
 Let $(X,\mathcal{O})$ be a topological space. Then the smallest $\sigma$-algebra containing the sets in $\mathcal{O}$ (often called the open sets in $X$) is called the Borel $\sigma$-algebra.
 \end{definition}
 
-\begin{definition}
-Suppose $\mu$ is a measure on $X$. Let $f:X\to\mathbb{R}$ be a function from $X$ into $\mathbb{R}$. Then $f$ as a function is called $\mu-$measurable if for all $\alpha \in \mathbb{R}$ we have the preimage of the interval $(\alpha,\infty)$, denoted $f^{-1}((\alpha,\infty))$ is a $\mu-$measurable set. 
-\end{definition}
-
-\begin{remark}
-In the above case, $f^{-1}(A)$ where $A$ is a set in $\mathbb{R}$ is called the ``preimage of $A$ under $f$" and is the set of all points in the domain that map through $f$ into $A$. That is to say, $f^{-1}(A) = \{x \in X : f(x) \in A\}$. This is not the same as the inverse function of $f$. 
-\end{remark}
-
-\begin{theorem}[Egoroff]
-Let $\mu$ be an outer measure on $X$ and let $A$ be $\mu-$measurable with finite measure $\mu(A) < \infty$. If $f_1, f_2, \ldots$ is a sequence of $\mu-$measurable functions $f_k: A \to \mathbb{R}$ with $\lim\limits_{k \to \infty} f_k(x) = 0$ for all $x \in A$, then for every $\varepsilon > 0$ there exists $B \subseteq A$ with $\mu(A \setminus B) < \varepsilon$ and $f_k(x) \to 0$ uniformly on $B$. 
-\end{theorem}
-
-Remarkably, Egoroff's theorem says that if you have pointwise convergence, you can throw away a set of arbitrarily small measure to get uniform convergence. This is particularly useful for us, as in measure theory theorems often are stated as holding ``almost everywhere" (a.e.) meaning up to a possible set of measure 0, where the statement may not hold.
-
-\begin{remark}
-Regarding the theorem above:
-\begin{enumerate}
-\item When we say $\lim\limits_{k \to \infty} f_k = 0$, this is merely to save space, it is equivalent to say that there exists a limiting function $f$ for which $\lim\limits_{k \to \infty} f_k = f$, we merely subtracted $f$ from both sides and spoke about the new function $f_k - f$, thus eliminating the need to mention $f$ at all. This is common shorthand and will not be mentioned again.
-\item Uniform convergence is much stronger than pointwise convergence, in that the sequence of functions must approach the limiting function in such a way that the values convergence for all $x$ in the domain simultaneously (in a tube-like fashion). Pointwise convergence merely means that looking at any particular point, the value of the sequence at that point converges to the limit.
-\end{enumerate}
-\end{remark}
-
 We will now attempt to convince ourselves that Carath\'eodory's definition of a measurable set is a good one in the sense that it leads to powerful measures with lots of measurable sets in a general setting.
 
 \begin{definition}
@@ -203,7 +186,109 @@ If $d(a,b)$ is the distance between two points then we define the distance betwe
 
 The assumption above is satisfied for many reasonable measures, intuitively because if the sets are separated by some distance then they shouldn't have any overlap - thus their measures should simply add.
 
+Sometimes it is useful to measure the amount of one set that lies in another. For this we define a notion of restriction.
+
+\begin{definition}
+Let $\mu$ be a measure on $X$ and let $A \subseteq X$. The we define the restriction of $\mu$ to $A$ by:
+
+\begin{align*}
+\mu \restrict A (B) = \mu(A \cap B)
+\end{align*}
+\end{definition}
+
+\begin{remark}
+It's easy to see that the above defines a new measure, and that if a set $B$ is $\mu$ measurable then it is also $\mu \restrict A$ measurable.
+\end{remark}
+
 \subsection{Integration, Generalized}
+
+We now turn to defining integration with respect to a measure $\mu$. If you recall, the familiar Riemann integral from undergraduate calculus $\int f(x) dx$ is defined using sums that look like $\sum f(x) \Delta x$. Some may even have nightmares approximating such integrals over some interval $(a,b)$ by hand by drawing boxes under curves at points $\{x_i\}_{i=1}^n \subseteq (a,b)$ of some fixed width $\Delta x$. It would be very natural then for us to define our integrals using sums with terms like:
+
+\begin{align*}
+f(x_i)\mu((x_i,x_{i+1}))
+\end{align*}
+
+But it turns out that we can do better! In the sense that a slight alteration will allow us to integrate everything the above would lead to, and more. We will instead use sums that have terms in the form of:
+
+\begin{align*}
+y_i \mu(f^{-1}((y_i,y_{i+1})))
+\end{align*}
+
+We still have a height times a length, but now we're measuring the preimage of a chunk of the $y$-axis (which itself is a chunk of the $x$-axis). This small dance turns out to be rather powerful, and with it emphasis is placed on functions that when we preimage open sets, give us sets we know to be measurable (i.e. we can do this trick!) we choose to call these functions \textbf{measurable functions}.
+
+\begin{definition}
+Suppose $\mu$ is a measure on $X$. Let $Y$ be a topological space. Let $f:X\to Y$ be a function from $X$ into $Y$. Then $f$ is called a $\mu-$measurable function if and only if for every open set $U \subseteq Y$ we have $f^{-1}(U) \subseteq X$ is a $\mu$-measurable set.
+\end{definition}
+
+\begin{definition}
+Let $\mu$ be a measure on $X$. Then a function $g:X\to [-\infty,\infty]$ is called a $\mu$-step function (if the context of the measure is clear, simply a ``step function") if $g$ is $\mu$-measurable and the image of $X$ under $g$ (aka the range), $g(X) := \{ g(x) : x \in X\}$ is countable as a set. 
+\end{definition}
+
+\begin{remark}
+The reason why we care about step functions is because we know that sums $\sum$ require a countable index set to sum over.
+\end{remark}
+
+\begin{definition}
+A $\mu$-step function is called $\mu$-integrable if the sum:
+
+\begin{align*}
+I(g) := \sum_{y \in g(X)} y\mu(g^{-1}(y))
+\end{align*}
+
+Converges in $[-\infty,\infty]$. 
+\end{definition}
+
+\begin{remark}
+In the above definition we will agree that $0 \cdot \infty = 0$, and that $\infty - \infty$ is undefined.
+\end{remark}
+
+\begin{definition}
+A $\mu$-integrable function is called $\mu$-summable if $I(g) \in (-\infty, \infty)$.
+\end{definition}
+
+Now we can define integration properly.
+
+\begin{definition}
+Let $f: X \to [-\infty,\infty]$ and let $S_\mu$ be the set of all $\mu$-integrable step functions. Define the upper integral of $f$ with respect to $\mu$ over $X$ to be:
+
+\begin{align*}
+\int^* f d\mu := \inf \{I(g) : g \in S_\mu, f \leq g, \mu-\text{a.e.}\}
+\end{align*}
+
+Similarly the lower integral:
+
+\begin{align*}
+\int_* f d\mu := \sup \{I(g) : g \in S_\mu, g \leq f, \mu-\text{a.e.}\}
+\end{align*}
+\end{definition}
+
+\begin{definition}
+Such a function $f$ as above is $\mu$-integrable if and only if:
+
+\begin{align*}
+\int^* f d\mu = \int_* f d\mu
+\end{align*}
+
+And we call this value the integral of $f$ with respect to $\mu$ over $X$ and denote it by $\int f d\mu$.
+\end{definition}
+
+\begin{remark}
+Every non-negative $\mu$-measurable function is $\mu$-integrable.
+\end{remark}
+
+\begin{theorem}[Egoroff]
+Let $\mu$ be an outer measure on $X$ and let $A$ be $\mu-$measurable with finite measure $\mu(A) < \infty$. If $f_1, f_2, \ldots$ is a sequence of $\mu-$measurable functions $f_k: A \to \mathbb{R}$ with $\lim\limits_{k \to \infty} f_k(x) = 0$ for all $x \in A$, then for every $\varepsilon > 0$ there exists $B \subseteq A$ with $\mu(A \setminus B) < \varepsilon$ and $f_k(x) \to 0$ uniformly on $B$. 
+\end{theorem}
+
+Remarkably, Egoroff's theorem says that if you have pointwise convergence, you can throw away a set of arbitrarily small measure to get uniform convergence. This is particularly useful for us, as in measure theory theorems often are stated as holding ``almost everywhere" (a.e.) meaning up to a possible set of measure 0, where the statement may not hold.
+
+\begin{remark}
+Regarding the theorem above:
+\begin{enumerate}
+\item When we say $\lim\limits_{k \to \infty} f_k = 0$, this is merely to save space, it is equivalent to say that there exists a limiting function $f$ for which $\lim\limits_{k \to \infty} f_k = f$, we merely subtracted $f$ from both sides and spoke about the new function $f_k - f$, thus eliminating the need to mention $f$ at all. This is common shorthand and will not be mentioned again.
+\item Uniform convergence is much stronger than pointwise convergence, in that the sequence of functions must approach the limiting function in such a way that the values convergence for all $x$ in the domain simultaneously (in a tube-like fashion). Pointwise convergence merely means that looking at any particular point, the value of the sequence at that point converges to the limit.
+\end{enumerate}
+\end{remark}
 
 \subsection{Hausdorff Measures}
 
@@ -307,6 +392,36 @@ Where $\eta_{p,\lambda}(y) := \frac{y-p}{\lambda}$.
 \end{definition}
 
 The above may look daunting, it's actually quite simple and very informative of what is going on. The map $\eta_{p,\lambda}(y)$ for $0 < \lambda < 1$ acts as a blow up by a factor of $\lambda$ for the set $S$ about the point $p$. The integrals against test functions is nothing more than the standard notion of weak convergence. Hence we say that $T$ is the tangent plane of $S$ at $p$ if we have weak convergence of the identity $1$ over the blow up of $S$ at $p$ to the identity over $T$ as $\lambda \to 0^+$. Even more simply, when we zoom in on the point $p$, our set $S$ approximately looks like $T$.
+
+
+\subsection{Forms}
+
+A $1-$form is a linear function that assigns a vector to a number. Hence, this ``action" on a vector is its defining property. Two 1-forms are considered equal then if and only if they are equal as functions; they act on all vectors in precisely the same way. We define the sum of two 1-forms $\alpha$ and $\beta$ by:
+
+\begin{align*}
+(\alpha + \beta)(v) = \alpha(v) + \beta(v)
+\end{align*}
+
+Just the same as we typically define function addition. Which, because both $\alpha,\beta$ are linear their sum is still linear and hence the sum of two 1-forms is a 1-form. Likewise, we define scalar multiplication in the obvious way. Thus the set of all $1$-forms over some common domain is itself a vector space. 
+
+If $V$ is a vector space, then the set of all 1-forms is denoted by $V^*$ and is called the dual vector space of $V$. The 1-forms are therefore sometimes referred to as covectors.
+
+\begin{example}
+The gradient of a scalar valued function $f: \mathbb{R}^n \to \mathbb{R}$ denoted by $\nabla f = \begin{bmatrix}
+f_{x_1} & f_{x_2} & \cdots & f_{x_n}
+\end{bmatrix}$ is a covector whose action (defined by matrix multiplication) with a vector $u$ in $\mathbb{R}^n$ indicates the slope of $f$ in the direction of $u$.
+\end{example}
+
+\begin{example}
+Any row vector with $n$ entries (above which is a special case) can be viewed as a covector or 1-form with domain $\mathbb{R}^n$.
+\end{example}
+
+Given a basisfor a vector space $V$ there is a natural basis for $V^*$ called the cannonical dual basis. If $v \in V$ is given by $v = (v_1,v_2,...,v_n)$ then we define the $i$th basis vector for the dual space $\omega_i$ by its action on $v$ given by $\omega_i(v) = v_i$. In other words, the $i$th component of $v$ which is a real number. Hence $\omega_i$ is a real-valued function and it is easy to check its linearity hence it is in fact a 1-form. Clearly then if we use the standard basis for $V$ given by $e_i$ then we have $\omega_i(e_j) = \delta_i^j = \begin{cases}
+1, & \text{if } i = j\\
+0, & \text{if } i \neq j
+\end{cases}$
+
+Clearly then if we have a vector with components $v_1,v_2,...,v_n$ with respect to the standard basis we can write either $v = v_1 e_1 + \cdots + v_n e_n$ or $v = \omega_1(v) e_1 + \cdots + \omega_n(v) e_n$.
 
 \subsection{Currents}
 
