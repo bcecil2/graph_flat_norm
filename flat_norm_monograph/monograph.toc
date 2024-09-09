@@ -5,15 +5,15 @@
 \contentsline {subsection}{\numberline {2.3}Hausdorff Measures}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Rectifiable Sets}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}$k$-Vectors and $k$-Forms}{10}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Tangent Vectors}{11}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Vector Fields}{11}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Dual Spaces and Permutations}{11}{subsubsection.2.5.3}%
-\contentsline {subsubsection}{\numberline {2.5.4}Multilinear Functions}{11}{subsubsection.2.5.4}%
-\contentsline {subsubsection}{\numberline {2.5.5}Tensor Products}{11}{subsubsection.2.5.5}%
-\contentsline {subsubsection}{\numberline {2.5.6}Wedge Products}{11}{subsubsection.2.5.6}%
-\contentsline {subsubsection}{\numberline {2.5.7}Differential Forms}{11}{subsubsection.2.5.7}%
-\contentsline {subsection}{\numberline {2.6}Currents}{11}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}The Flat Norm}{12}{subsection.2.7}%
-\contentsline {section}{\numberline {3}L1TV Computes the Flat Norm}{12}{section.3}%
+\contentsline {subsubsection}{\numberline {2.5.1}Tangent Vectors}{12}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Vector Fields}{12}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Dual Spaces and Permutations}{12}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Multilinear Functions}{12}{subsubsection.2.5.4}%
+\contentsline {subsubsection}{\numberline {2.5.5}Tensor Products}{12}{subsubsection.2.5.5}%
+\contentsline {subsubsection}{\numberline {2.5.6}Wedge Products}{12}{subsubsection.2.5.6}%
+\contentsline {subsubsection}{\numberline {2.5.7}Differential Forms}{12}{subsubsection.2.5.7}%
+\contentsline {subsection}{\numberline {2.6}Currents}{12}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}The Flat Norm}{13}{subsection.2.7}%
+\contentsline {section}{\numberline {3}L1TV Computes the Flat Norm}{13}{section.3}%
 \contentsline {section}{\numberline {4}Answers and Questions}{13}{section.4}%
 \contentsline {section}{\numberline {5}Computing the Flat Norm}{13}{section.5}%
