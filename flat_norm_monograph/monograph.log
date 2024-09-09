@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.9)  8 SEP 2024 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.9)  8 SEP 2024 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -445,7 +445,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
-[10] [11] [12] (monograph.aux)
+[10] [11] [12] [13] (monograph.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -454,8 +454,8 @@ Package rerunfilecheck Info: File `monograph.out' has not changed.
 (rerunfilecheck)             Checksum: 0A8F29710716378389E657511A4095EB;2834.
  ) 
 Here is how much of TeX's memory you used:
- 9847 strings out of 474435
- 152292 string characters out of 5738122
+ 9848 strings out of 474435
+ 152299 string characters out of 5738122
  1938190 words of memory out of 5000000
  31967 multiletter control sequences out of 15000+600000
  569142 words of font info for 79 fonts, out of 8000000 for 9000
@@ -486,9 +486,9 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Curtis Se
 npai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eusm10.pfb
 ><C:/Users/Curtis Senpai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb>
-Output written on monograph.pdf (12 pages, 315888 bytes).
+Output written on monograph.pdf (13 pages, 317775 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

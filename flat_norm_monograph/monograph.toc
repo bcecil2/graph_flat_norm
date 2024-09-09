@@ -15,5 +15,5 @@
 \contentsline {subsection}{\numberline {2.6}Currents}{11}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}The Flat Norm}{12}{subsection.2.7}%
 \contentsline {section}{\numberline {3}L1TV Computes the Flat Norm}{12}{section.3}%
-\contentsline {section}{\numberline {4}Answers and Questions}{12}{section.4}%
-\contentsline {section}{\numberline {5}Computing the Flat Norm}{12}{section.5}%
+\contentsline {section}{\numberline {4}Answers and Questions}{13}{section.4}%
+\contentsline {section}{\numberline {5}Computing the Flat Norm}{13}{section.5}%
