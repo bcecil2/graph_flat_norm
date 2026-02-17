@@ -1,7 +1,0 @@
-\contentsline {section}{\numberline {1}Multiscale Flat Norm}{1}{section.1}%
-\contentsline {section}{\numberline {2}Discrete Implementations}{2}{section.2}%
-\contentsline {section}{\numberline {3}Flat Norm on Arbitrary 2D and 3D Graphs}{5}{section.3}%
-\contentsline {section}{\numberline {4}Tests}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Implementation and Visualizations}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Perimeter Calculation}{10}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Edge Cases}{11}{section.5}%
