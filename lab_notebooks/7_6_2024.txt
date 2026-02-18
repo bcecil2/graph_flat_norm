@@ -1,0 +1,2 @@
+1. redoing folder structure, project will now be in /src/
+2. splitting code up into manageable files easier to debug

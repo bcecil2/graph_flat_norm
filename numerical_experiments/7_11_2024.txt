@@ -1,0 +1,9 @@
+test 1: irregular grid with regular circle
+n = 125
+r1 = 0.5
+r2 = 0.25
+w = 5
+neighbors = 24
+lamb = 8.5
+perturbation bound = 0.5
+lambda = 22 < lamb < 22.5, "keeps" the circles, still errors but both appear
