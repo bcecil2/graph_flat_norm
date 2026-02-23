@@ -8,5 +8,5 @@ as an image denoising and blurring algorithm with a parameter $\lambda$ which pr
 For instance a circle of radius $r$ has a curvature of $1/r$ so small circles have high curvature. If we take an image of circles of different
 radius and set $\lambda$ appropriatley we will remove the circle of largest curvature while preserving the others (notice the circles we preserve are also smoothed in places where the discretization causes high curvature).
 
-![original circles](circlesgraph.png)
+<img src="circlesgraph.png" alt="original circles" height="50%" width="50%"/>
 ![denoised circles](circlesdisappear.png)
